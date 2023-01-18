@@ -30,7 +30,7 @@ class GiniIndex:
         self.gini_countries = []
         
     def get_data(self, name, ticker):
-        api_key = os.environ.get('API_KEY')
+        api_key = 'b519a08f380ad1b925acec1d68eb6c4f'
         endpoint = 'https://fred.stlouisfed.org/data/SIPOVGINI' + ticker + '.txt'
         params = {'api_key': api_key, 'file_type': 'json'}
         try:
