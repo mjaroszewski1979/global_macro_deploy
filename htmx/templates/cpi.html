@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}CPI Index{% endblock title %}
+
+{% block content %}
+<div id="wrapper">
+{% if not error_msg %}
+    <section>
+        <div class="content" id="cpi-select">
+            <select name="symbol" 
+                    id="select-symbol" 
+                    class="custom-select" 
+                    autocomplete="off"
+                    hx-get="{% url 'htmx:cpi' %}"
+                    hx-target="#line-chart">
+                {% for x, y in inputs.items %}	
+                <option value="{{y}}">{{x}}</option>
+                {% endfor %}
+            </select>
+    </div>   
+    </section>
+        <section id="main" class="wrapper">
+            <div class="content">
+                <div class="chart" id="line-chart">
+                    {% include 'partials/chart.html' %}
+                </div>   
+            </div>
+        </section>
+{% else %}
+<h3>{{ error_msg }}</h3>
+{% endif %}
+</div>
+{% endblock content %}
+

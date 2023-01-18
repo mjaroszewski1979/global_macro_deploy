@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Gini Index{% endblock title %}
+
+{% block content %}
+<div id="wrapper">
+    {% if not error_msg %}
+
+    <section>
+        <div class="content" id="gini-select">
+            <select name="year" 
+                    id="select-year" 
+                    class="custom-select" 
+                    autocomplete="off"
+                    hx-get="{% url 'htmx:gini' %}"
+                    hx-target="#bar-chart">
+                {% for year in years %}
+                <option value="{{year}}">{{year}}</option>
+                {% endfor %}
+            </select>
+    </div>   
+    </section>
+        <section id="main" class="wrapper">
+            <div class="content">
+                <div class="chart" id="bar-chart">
+                    {% include 'partials/chart.html' %}
+                </div>   
+            </div>
+        </section>
+    {% else %}
+    <h3>{{ error_msg }}</h3>
+    {% endif %}
+
+</div>
+{% endblock content %}

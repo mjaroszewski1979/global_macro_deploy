@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Global Macro | Home</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+		<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+		<noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload" id="home">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#one">Interactive Charts</a></li>
+							<li><a href="#two">Macroeconomic Indicators</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>Global Macro</h1>
+							<p>Investment strategy based on the interpretation and prediction of large-scale events related to national economies, 
+								history, and international relations. The strategy typically employs forecasts and analysis of interest rate trends, 
+								international trade and payments, political changes, government policies, inter-government relations, and other broad systemic factors.</p>
+							<ul class="actions">
+								<li><a href="#one" class="button scrolly">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="{% static 'images/pic01.png' %}" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>The Gini index</h2>
+									<p>This is a measure of the distribution of income across a population. 
+										A higher Gini index indicates greater inequality, 
+										with high-income individuals receiving much larger percentages of the total income of the population.</p>
+									<ul class="actions">
+										<li><a class="button" href="{% url 'htmx:gini' %}" >GINI Index Chart</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="{% static 'images/pic02.png' %}" alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>The Consumer Price Index (CPI)</h2>
+									<p>It measures the average change in prices over time that consumers pay for a basket of goods and services.
+										A CPI can be used to index (i.e. adjust for the effect of inflation) the real value of wages, salaries, 
+										and pensions; to regulate prices; and to deflate monetary magnitudes to show changes in real values.
+									</p>
+									<ul class="actions">
+										<li><a class="button" href="{% url 'htmx:cpi' %}" >CPI Chart</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="{% static 'images/pic03.png' %}" alt="" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Stock Market Index</h2>
+									<p>Stock market indices could be segmented by their index weight methodology, or the rules on how stocks are allocated in the index, independent of its stock coverage.
+										Two of the primary criteria of an index are that it is investable and transparent. 
+										Investors can invest in a stock market index by buying an index fund, which are structured as either a mutual fund or an exchange-traded fund, and "track" an index.
+									</p>
+									<ul class="actions">
+										<li><a class="button" href="{% url 'htmx:stock' %}" >Stock Index Chart</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Macroeconomic Indicators</h2>
+							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<div class="features">
+								<section>
+									<span class="icon solid major fa-code"></span>
+									<h3>Lorem ipsum amet</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-lock"></span>
+									<h3>Aliquam sed nullam</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-cog"></span>
+									<h3>Sed erat ullam corper</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>Veroeros quis lorem</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-link"></span>
+									<h3>Urna quis bibendum</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-gem"></span>
+									<h3>Aliquam urna dapibus</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="#" class="button">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+					
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Maciej Jaroszewski. All rights reserved.</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a>
+						<a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+						<a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						<a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+						<a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+					</ul>
+
+						
+
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>

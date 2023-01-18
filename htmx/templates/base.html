@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Global Macro | {% block title %}{% endblock title %}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+		<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+		<noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+        <script src="https://unpkg.com/htmx.org@1.5.0"
+        integrity="sha384-oGA+prIp5Vchu6we2YkI51UtVzN9Jpx2Z7PnR1I78PnZlN8LkrCT4lqqqmDkyrvI"
+        crossorigin="anonymous"></script>
+	</head>
+	<body class="is-preload" id="main">
+
+		<!-- Header -->
+			<header id="header">
+				<a 
+				hx-get="{% url 'htmx:home' %}"
+                hx-target="#main"
+				hx-push-url="/"
+				class="title">Global Macro</a>
+				<nav>
+					<ul>
+						<li><a 
+                            hx-get="{% url 'htmx:home' %}"
+                            hx-target="#main"
+							hx-push-url="/"
+                            >Home</a>
+                        </li>
+					</ul>
+				</nav>
+			</header>
+
+            {% block content %}
+            {% endblock content %}
+
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Maciej Jaroszewski. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+            <script src="{% static 'js/jquery.min.js' %}"></script>
+            <script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+            <script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
+            <script src="{% static 'js/browser.min.js' %}"></script>
+            <script src="{% static 'js/breakpoints.min.js' %}"></script>
+            <script src="{% static 'js/util.js' %}"></script>
+            <script src="{% static 'js/main.js' %}"></script>
+            <script>
+                document.body.addEventListener('htmx:configRequest', (event) => {
+                    event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+                })
+            </script>
+            <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.0.min.js"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.0.min.js"
+                    crossorigin="anonymous"></script>
+            <script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.0.min.js"
+                    crossorigin="anonymous"></script>
+            <script src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.0.min.js"
+                    crossorigin="anonymous"></script>
+            <script src="https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.0.min.js"
+                    crossorigin="anonymous"></script>
+
+	</body>
+</html>

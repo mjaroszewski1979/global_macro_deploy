@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Stock Index{% endblock title %}
+
+{% block content %}
+
+<div id="wrapper">
+{% if not error_msg %}
+    <section>
+        <div class="content" id="stock-select">
+            <select name="stock" 
+                    id="select-stock" 
+                    class="custom-select" 
+                    autocomplete="off"
+                    hx-get="{% url 'htmx:stock' %}"
+                    hx-target="#hex-chart">
+                {% for x, y in inputs.items %}	
+                <option value="{{y}}">{{x}}</option>
+                {% endfor %}
+            </select>
+    </div>   
+    </section>
+
+    <section id="main" class="wrapper">
+        <div class="content">
+            <div class="chart" id="hex-chart">
+                {% include 'partials/chart.html' %}
+            </div>   
+        </div>
+    </section>
+{% else %}
+<h3>{{ error_msg }}</h3>
+{% endif %}
+</div>
+
+{% endblock content %}
